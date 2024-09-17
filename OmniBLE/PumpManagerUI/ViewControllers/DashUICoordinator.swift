@@ -149,7 +149,7 @@ class DashUICoordinator: UINavigationController, PumpManagerOnboarding, Completi
             hostedView.navigationItem.title = LocalizedString("Insulin Type", comment: "Title for insulin type selection screen")
             return hostedView
         case .deactivate:
-            let viewModel = DeactivatePodViewModel(podDeactivator: pumpManager, podAttachedToBody: pumpManager.podAttachmentConfirmed)
+            let viewModel = DeactivatePodViewModel(podDeactivator: pumpManager, podAttachedToBody: pumpManager.podAttachmentConfirmed, fault: pumpManager.state.podState?.fault)
 
             viewModel.didFinish = { [weak self] in
                 self?.stepFinished()
@@ -303,6 +303,8 @@ class DashUICoordinator: UINavigationController, PumpManagerOnboarding, Completi
     }
     
     private func hostingController<Content: View>(rootView: Content, onDisappear: @escaping () -> Void = {}) -> DismissibleHostingController<some View> {
+        let rootView = rootView
+            .environment(\.appName, Bundle.main.bundleDisplayName)
         return DismissibleHostingController(content: rootView, onDisappear: onDisappear, colorPalette: colorPalette)
     }
     

@@ -1111,6 +1111,9 @@
 /* Button text to confirm pump time sync */
 "Yes, Sync to Current Time" = "Ja, Synkroniser til gjeldende tid";
 
+/* No comment provided by engineer. */
+"You will be notified in advance of Pod expiration.\n\nScroll to set the number of hours advance notice you would like to have." = "Du vil bli varslet på forhånd om Pod-utløp. Bla ned for å angi antall timer med forhåndsvarsel du ønsker å motta."
+
 /* bodyText for PodSetupView */
 "You will now begin the process of configuring your reminders, filling your Pod with insulin, pairing to your device and placing it on your body." = "Du vil nå begynne prosessen med å konfigurere påminnelsene, fylle pod med insulin, pare til enheten og plassere den på kroppen.";
 
